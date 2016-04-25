@@ -1,0 +1,118 @@
+html{height: 150%;}
+
+body
+{
+    background-color: FFFFCC;
+    position:relative;
+    height: 100%;
+    border: 3px solid grey;
+    text-align: center;
+}
+
+
+#Leheader
+{
+    position:relative;
+    text-align: center;
+    border: 3px solid black;
+    width: 25%;
+    left: 30%;
+    height:6.5%;
+    top: 1%;
+    -moz-box-shadow: 7px 5px 8px 1px #67fd9a;
+    -webkit-box-shadow: 7px 5px 8px 1px #67fd9a;
+    -o-box-shadow: 7px 5px 8px 1px #67fd9a;
+    box-shadow: 7px 5px 8px 1px #67fd9a;
+    border-radius: 30px;
+    background-color: #F0FFE7;
+}
+
+#LaSection
+{
+    position:relative;
+    width: 60%;
+    left: 13%;
+    border: 2px solid black;
+    height: calc(82% - 9px);
+    top:20px;
+    background-color: E4FFE7;
+}
+
+header
+{
+    //background-color: grey;
+    margin: 4px;
+    position:relative;
+    width: calc(100% - 11px);
+    text-align: center;
+}
+#PremierDivHeader
+{
+    margin-top: 15px;
+    position:relative;
+    border: 2px solid yellow;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius:100%;
+    border-top-left-radius: 100%;
+    border-bottom-left-radius:100%;border-top-right-radius: 100%;
+    border-bottom-right-radius:100%;
+}
+
+p
+{
+    margin: 15px;
+    position:relative;
+    width: 75%;
+    border: 1px solid green;
+    left: 13%;
+    border-top-right-radius: 100%;
+    border-bottom-right-radius:100%;
+    border-top-left-radius: 100%;
+    border-bottom-left-radius:100%;
+}
+
+#DeuxiemeDiv
+{
+    position:relative;
+    border: 2px solid purple;
+    left: 100.5%;
+    width: 20%;
+    height: 30%;
+    bottom: 97%;
+}
+
+button
+{
+    position:relative;
+    float:right;
+    right: 10%;
+}
+
+button:hover{background-color: grey;}
+
+input
+{
+    position:relative;
+    display:inline-block;
+    margin-left:35%;
+    padding: 5px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+form
+{
+   position:relative;
+   text-align: left;
+} 
+
+
+#Female{margin-left:10%;}
+#CheckBox{margin-left: 10%;}
+#PremierDiv{margin-left: 40px;}
+
+
+
+
+
+

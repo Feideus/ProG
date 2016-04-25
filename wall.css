@@ -1,0 +1,101 @@
+html
+{
+    height: 100%;
+	overflow: scroll;
+
+}
+
+body 
+{
+	background-color :  #ffd27f;
+	font-family : Helvetica, ,Arial ,sans-serif;
+	height:100%;
+	    width: 100%;
+}
+
+
+header
+{
+	background-color :  #F4A460;
+	color: blue;
+	text-align: center;
+	top:0%;
+	bottom : 90%;
+	margin-left :auto;
+	margin-right: auto;
+	width : 30%;
+	min-width : 300px;
+	position : relative;
+	border: 3px solid black;
+	border-radius : 5px;
+	box-shadow : 6px 6px 0px #FF9933;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	hyphens: auto;
+	word-wrap : break-word;
+}
+
+#titre_de_la_page
+{
+	position:relative;
+	top:10%;
+	bottom:80%;
+	margin-left :auto;
+	margin-right: auto;
+	width: 20%;
+	height: 5%;
+}
+
+#sendpost
+{
+	top: 10%;
+	position:relative;
+	margin-left :75%;
+	width : 25%;
+	height: 20%;
+}
+
+#thewall
+{
+	position: relative;
+	top: 35%+12px;
+	bottom: 10%;
+	margin-left:auto ;
+	margin-right: auto;
+	overflow: scroll;
+	background-color: white;
+	border: 2px solid black;
+	border-radius : 5px;
+	width: 40%;
+	height: 65%;
+}
+
+nav
+{
+	position: fixed;
+	top: 10%;
+	left:0%;
+	width: 25%;
+}
+
+footer
+{
+	position:relative;
+	text-align : center ;
+	color : #000033;
+	position : relative;
+	border-radius : 3px;
+	border: 3px ridge grey;
+	margin : 10px 10px 10px 10pxx
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	hyphens: auto;
+	word-wrap : break-word;
+	top:90% + 25px;
+	
+}
+

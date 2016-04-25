@@ -1,0 +1,65 @@
+body
+{
+	background-color :  #ffd27f;
+	font-family : Helvetica, ,Arial ,sans-serif;
+	height: 100%
+	width:100%;
+}
+
+#principal
+{
+	background-color :  #FFEF00;
+	color: blue;
+	text-align: center;
+	top:0%;
+	margin-left :auto;	
+	margin-right: auto;	
+	width: 30%;
+	min-width : 300px;
+	position : relative;
+	border: 3px solid black;
+	border-radius : 5px;
+	box-shadow : 6px 6px 0px grey;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	hyphens: auto;
+	word-wrap : break-word;
+}
+
+nav
+{
+	text-align : center ;
+	color : #000033;
+	position : relative;
+	margin-right : auto;
+}
+
+article
+{
+	width: 55%;
+	margin-bottom: 15%;
+}
+
+footer
+{
+	margin-top: 95%;
+	height: 5%;
+	bottom: 0%;
+	text-align : center ;
+	color : #000033;
+	position : relative;
+	border-radius : 3px;
+	border: 3px ridge grey;
+	margin : 10px 10px 10px 10px;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	hyphens: auto;
+	word-wrap : break-word;
+	
+}
+	
+

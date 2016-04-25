@@ -1,0 +1,88 @@
+html
+{
+    height: 100%;
+
+}
+
+body 
+{
+	background-color :  #ffd27f;
+	font-family : Helvetica, ,Arial ,sans-serif;
+	height:100%;
+}
+
+header
+{
+	background-color :  #F4A460;
+	color: blue;
+	text-align: center;
+	top:0%;
+	bottom : 90%;
+	left :30%;
+	width : 30%;
+	min-width : 300px;
+	position : relative;
+	border: 3px solid black;
+	border-radius : 5px;
+	box-shadow : 6px 6px 0px #FF9933;
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	hyphens: auto;
+	word-wrap : break-word;
+}
+
+/*.id
+{
+	position:float;
+	bottom : 30%;
+
+}
+
+.Inscription
+{
+
+	position:float;
+	bottom : 30%;
+
+}*/
+
+div
+{
+	position:relative;
+	top:50% -12 px;
+	left: 35%;
+	right: 35%
+	display: inline;
+
+
+}
+
+footer
+{
+	position:relative;
+	text-align : center ;
+	color : #000033;
+	position : relative;
+	border-radius : 3px;
+	border: 3px ridge grey;
+	margin : 10px 10px 10px 10pxx
+	-webkit-hyphens: auto;
+	-moz-hyphens: auto;
+	-ms-hyphens: auto;
+	-o-hyphens: auto;
+	hyphens: auto;
+	word-wrap : break-word;
+	top:50%;
+	
+}
+
+button
+{
+	width: 150px;
+	height:60px;
+
+
+}
+
