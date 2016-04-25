@@ -1,4 +1,4 @@
-html{height: 150%;}
+html{height: 200%;}
 
 body
 {
@@ -116,3 +116,40 @@ form
 
 
 
+
+
+.clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+} 
+.clearfix:after {
+    clear: both;
+}
+
+.fieldset {
+	width:100%;
+	margin:0 0 10px;
+}
+
+
+.fieldset label {
+    float:left;
+    width:30%;
+}
+
+.fieldset input[type="text"],
+.fieldset input[type="password"],
+.fieldset input[type="tel"],
+.fieldset input[type="email"],
+.fieldset input[type="date"],
+.fieldset .field {
+	float:left;
+	width:30%;
+	margin:0 0 0;
+}
+
+
+.fieldset input[type="checkbox"] {
+    margin:0;
+}
