@@ -16,91 +16,90 @@
         <section id="LaSection">
             <div id="PremierDiv">
                 <header id="PremierDivHeader">
-                    <h2> Paramètres du compte </h2>
+                    <h2>Paramètres du compte</h2>
                 </header>
-                <p id="PremierDivPar1">
-                    <h3>informations Personnelles</h3>
-                </p>
-                <section>
+                <div class="DivPartie">
+                    informations Personnelles
+                </div>
+                <div>
                     <form id="FormInfoPerso" method="POST">
 
                         <div class="fieldset clearfix">
                             <label>Pseudo</label>
-                            <input type="text" />
-                            </input>
-                            <button text="Modifier">
+                            <input type="text"/>
+                         
+                            <button type="button">
                                 Modifier
                             </button>
                         </div>
                         <div class="fieldset clearfix">
                             <label> Nom</label>
-                            <input type="text" />
-                            </input>
-                            <button text="Modifier" align=>
+                            <input type="text"/>
+                            <button type="button">
                                 Modifier
                             </button>
                         </div>
                         <div class="fieldset clearfix">
                             <label> Prénom</label>
                             <input type="text" />
-                            </input>
-                            <button text="Modifier">
+                           
+                            <button type="button">
                                 Modifier
                             </button>
                         </div>
                         <div class="fieldset clearfix">
                             <label> Sexe</label>
                             <div class="field">
-                            <input type="checkbox" value="Male">
-                            Homme</input>
-                            <input type="checkbox" value="Female" id="Female">
-                            femme</input></div>
+                            <input type="checkbox" value="Male"/>
+                            Homme
+                            <input type="checkbox" value="Female" id="Female"/>
+                            Femme</div>
                         </div>
                         <div class="fieldset clearfix">
                             <label> Date de naissance</label>
-                            <input type="date" name="anniversaire">
-                            </input>
-                            <button text="Modifier">
+                            <input type="text" name="anniversaire"/>
+                           
+                            <button type="button">
                                 Modifier
                             </button>
                         </div>
                         <div class="fieldset clearfix">
                             <label>Adresse</label>
                             <input type="text" />
-                            </input>
-                            <button text="Modifier">
+                            
+                            <button type="button">
                                 Modifier
                             </button>
                         </div>
 
                     </form>
-                </section>
-                <p id="PremierDivPar2">
-                    <h3>Identifiants et Connexion</h3>
-                </p>
+                </div>
+                <div class="DivPartie">
+                    Identifiants et Connexion
+                </div>
 
                 <form id="FormConnexion" method="POST">
 		  <div class="fieldset clearfix">
                     <label>Mot de passe</label>
-                    <input type="password">
-                    </input>
-                    <button text="Modifier">
+                    <input type="password"/>
+                   
+                    <button type="button">
                         Modifier
                     </button>
 		  </div>
 		  <div class="fieldset clearfix">
                     <label>Email</label>
-                    <input type="email">
-                    </input>
-                    <button text="Modifier">
+                    <input type="email"/>
+                   
+                    <button type="button">
                         Modifier
                     </button>
 		  </div>
 		  <div class="fieldset clearfix">
                     <label>Téléphone</label>
-                    <input type="tel">
-                    </input>
-                    <button text="Modifier">
+                    <input type="tel"/>
+                   
+                    <button type="button">
                         Modifier
                     </button>
                     <br/>
@@ -108,31 +107,35 @@
 
                 </form>
 
-                <p id="PremierDivPar3">
-                    <h3>Messagerie instantanée</h3>
-                </p>
+                <div class="DivPartie">
+                    Messagerie instantanée
+                </div>
 
                 <form id="FormChat" method="POST">
 
-                    Nom messagerie
+		  <div class="fieldset clearfix">
+                   <label> Nom messagerie</label>
                     <input type="text" />
-                    </input>
-                    <button text="Modifier">
+                   
+                    <button type="button">
                         Modifier
                     </button>
-                    <br/>
-                    Activer le chat ?
-                    <input type="checkbox" value="Oui" id="CheckBox">
-                    Oui</input>
-                    <input type="checkbox" value="Non" id="CheckBox">
-                    Non</input>
-                    <br/>
-                    Afficher l'heure des messages?
-                    <input type="checkbox" value= "Oui" id="CheckBox">
-                    Oui </input>
-                    <input type="checkbox" value="Non" id="CheckBox">
-                    Non </input>
-                    <br/>
+		  </div>
+
+                  <div class="fieldset clearfix">
+                   <label> Activer le chat ?</label>
+                    <input type="checkbox" value="Oui" class="CheckBox"/>
+                    Oui
+                    <input type="checkbox" value="Non" class="CheckBox"/>
+                    Non
+		  </div>
+		  <div class="fieldset clearfix">
+                    <label>Afficher l'heure ?</label>
+                    <input type="checkbox" value="Oui" class="CheckBox"/>
+                    Oui
+                    <input type="checkbox" value="Non" class="CheckBox"/>
+                    Non
+                  </div>
 
                 </form>
 
@@ -142,16 +145,8 @@
                 <header id ="DeuxiemeDivHeader">
                     Catégories
                 </header>
-                <p id="DeuxiemeDivPar1">
-
-                </p>
             </div>
-            <div id="TroisiemeDiv">
-                <!-- <header id="TroisiemeDivHeader">
-                Infos complémentaires
-                </header>-->
-            </div>
-
+            
         </section>
 
     </body>
