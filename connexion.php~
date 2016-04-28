@@ -38,6 +38,10 @@
 				</fieldset>
 			</form>
 		</article>
+		<?php
+		   echo "coucou";
+           require("connexionClient.php");
+		 ?>
 		<footer>
 			<p>@Touitteur Erwan & Gaëtan Tout droits réservés ©</p>
 		</footer>
