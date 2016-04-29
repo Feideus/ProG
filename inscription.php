@@ -1,48 +1,50 @@
 <?php
-		 /**
-		 *
-		 */
+
+
  class inscription 
  {
 		 	var $pseudo;
 		 	var $passe;
 		 	var $passe2;
 		 	var $email;
+ 
+
 
 			function testchamps()
-            {
-				if(!empty(this_$pseudo))
+            { 
+                echo"COUCOU";
+				if(!empty($this->pseudo))
                 {// D'abord,je teste si le champs login est non vide.  
-					if(!empty(this_$passe)&&!empty(this_$passe2))
+					if(!empty($this->passe) AND !empty($this->passe2))
                     {// Ensuite, je teste si le champs mdp est non vide.
-						if(this$passe === this$passe2)
+						if($this->passe === $this->passe2)
                         {	
-							if (filter_var(this$email, FILTER_VALIDATE_EMAIL)) 
+							if (filter_var($this->email, FILTER_VALIDATE_EMAIL)) 
                             {
 									return true;
 							}
 						}	
 					}
-				}
+                }
 				return false;
-			}
-         
+            }
 
-function ajoutTouitos($id,$pseudo,$email,$mdp,$t,$status)
-			{			
-								$bdd = new PDO('mysql:host=localhost;dbname=TOUITTEUR', 'Feideus', 'lebossdesboss32');		
-								// Je me connecte à la base de données .		
-								// Je vais crypter le mot de passe.	
-								$bdd->prepare("INSERT INTO Touitos VALUES(:id,:pseudonyme,:email,:mdp,:t,:status)");
-                                $bdd->execute(array('id' => $id, 'pseudonyme' => $pseudo, 'email' => $email, 'mdp' => $mdp, 't' => $t , 'status' => $status);
-								
-			}
-
-            function TestTouitos ($ARGlogin,$ARGemail)
+ 
+            
+            function ajoutTouitos($id,$pseudo,$email,$motPasse)
 			{
-				var $login;
-                var $email;
-
+                echo"COUCOU3";
+                $bdd = new PDO('mysql:host=localhost;dbname=TOUITTEUR', 'Feideus', 'lebossdesboss32');		
+                // Je me connecte à la base de données .		
+                // Je vais crypter le mot de passe.	
+                $req = $bdd->prepare('INSERT INTO Touitos VALUES(:id,:pseudonyme,:email,:motPasse,:photo,:statut)');
+                $req->execute(array('id' => $id, 'pseudonyme' => $pseudo, 'email' => $email, 'motPasse' => $motPasse, 'photo' => 't' , 'statut' => 'temp'));
+            }					
+            
+                 
+function TestTouitos ($ARGlogin,$ARGemail)
+			{
+			   
                 $login = $ARGlogin;
                 $email = $ARGemail;
 
@@ -53,45 +55,63 @@ function ajoutTouitos($id,$pseudo,$email,$mdp,$t,$status)
 				$Touitos->execute();
 				$Touitos->setFetchMode(PDO::FETCH_OBJ);
 
-				while($user = $Touitos->fetch()){
-					if (strcmp($user->pseudonyme, $ARGlogin))
+				while($user = $Touitos->fetch())
+               {
+					if (strcmp($user->pseudonyme, $ARGlogin) === 0)
 					{
-						if(strcmp($user->email,$ARGemail))
+						if(strcmp($user->email,$ARGemail) === 0)
 						{
 							return 2;
 						}
-							else
-							{
+						else
+						{
 								return 3;
-							}
 						}
 					}
+				}
 					return 1;
-		   }
-                                
-                $this_passe = htmlentities($_POST['mdp']);
-				$this_passe2 = htmlentities($_POST['mdp2']);
-				$this_pseudo = htmlentities($_POST['pseudo']);
-				$this_email = htmlentities($_POST['email']);
-				if(testchamps()){
-					switch (TestTouitos($this_pseudo, $this_email)){
+           }
+}
+
+                $bdd = new PDO('mysql:host=localhost;dbname=TOUITTEUR', 'Feideus', 'lebossdesboss32');
+				// Je me connecte à la base de données .
+				$temp = $bdd ->prepare("SELECT MAX(id) FROM Touitos");
+
+				$temp->execute();
+                $temp = $temp->fetch();
+                $NouveauID = intval($temp["MAX(id)"]);
+                $NouveauID = $NouveauID + 1;
+
+echo"".$NouveauID;
+
+                $inscription = new inscription;
+                $inscription->passe = htmlentities($_POST['mdp']);
+				$inscription->passe2 = htmlentities($_POST['mdp2']);
+				$inscription->pseudo = htmlentities($_POST['pseudonyme']);
+				$inscription->email = htmlentities($_POST['email']);
+				if($inscription->testchamps())
+                    {
+                        switch ($inscription->TestTouitos($inscription->pseudo, $inscription->email))
+                       {
 						case 1 :
-							ajout($this_pseudo,$this_email,$this_passe);
-							echo '<p>Compte crée!<br/> Voivi le lien vers la page d\'index<br/> <a href="connexion.html">Se connecter</a></p>';
+                            echo '<p>Compte crée!<br/> Voivi le lien vers la page d\'index<br/> <a href="connexion.html">Se connecter</a></p>';
+							$inscription->ajoutTouitos((int) $NouveauID, $inscription->pseudo,$inscription->email,$inscription->passe);
 							break;
 						case 2 :
-							require("inscription.php"); 
+                            echo "pseudo deja utilisé"; 
+							require_once("inscription.php"); 
 							exit();
-							echo "pseudo deja utilisé"; 
+							
 							break;
 						case 3 :
-							require("inscription.php"); 
+                            echo "email deja utilisé";
+							require_once("inscription.php"); 
 							exit();
-							echo "email deja utilisé"; 
+							 
 							break;
-					}
+                       }
 
-                }
-            }
- }
+                       }
+
+
 ?>
