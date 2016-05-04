@@ -32,9 +32,9 @@
  
             
             function ajoutTouitos($id,$pseudo,$email,$motPasse)
-		{
+			{
                 echo"COUCOU3";
-                $bdd=new PDO('mysql:host=localhost;dbname=Touiteur','erwan','lebossdesboss32');		
+                $bdd = new PDO('mysql:host=localhost;dbname=TOUITTEUR', 'Feideus', 'lebossdesboss32');		
                 // Je me connecte à la base de données .		
                 // Je vais crypter le mot de passe.	
                 $req = $bdd->prepare('INSERT INTO Touitos VALUES(:id,:pseudonyme,:email,:motPasse,:photo,:statut)');
@@ -48,7 +48,7 @@ function TestTouitos ($ARGlogin,$ARGemail)
                 $login = $ARGlogin;
                 $email = $ARGemail;
 
-                $bdd=new PDO('mysql:host=localhost;dbname=Touiteur','erwan','lebossdesboss32');
+				$bdd = new PDO('mysql:host=localhost;dbname=TOUITTEUR', 'Feideus', 'lebossdesboss32');		
 				// Je me connecte à la base de données .
 				$Touitos = $bdd ->prepare("SELECT pseudonyme, email from Touitos");
 
@@ -73,7 +73,7 @@ function TestTouitos ($ARGlogin,$ARGemail)
            }
 }
 
-                $bdd=new PDO('mysql:host=localhost;dbname=Touiteur','erwan','lebossdesboss32');
+                $bdd = new PDO('mysql:host=localhost;dbname=TOUITTEUR', 'Feideus', 'lebossdesboss32');
 				// Je me connecte à la base de données .
 				$temp = $bdd ->prepare("SELECT MAX(id) FROM Touitos");
 
