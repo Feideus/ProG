@@ -29,9 +29,10 @@
 				</fieldset>
 		</nav>
 		<div id="thewall">
-
-
-
+		<?php
+		    echo"COUCOU";
+		    require(ListeAbonné.php);
+		?>
 		</div>
 		<footer>
 			<p>@Touitteur Erwan & Gaëtan Tout droits réservés ©</p>

@@ -1,7 +1,6 @@
 html
 {
     height: 100%;
-	overflow: scroll;
 
 }
 
@@ -10,9 +9,7 @@ body
 	background-color :  #ffd27f;
 	font-family : Helvetica, ,Arial ,sans-serif;
 	height:100%;
-	    width: 100%;
 }
-
 
 header
 {
@@ -21,8 +18,7 @@ header
 	text-align: center;
 	top:0%;
 	bottom : 90%;
-	margin-left :auto;
-	margin-right: auto;
+	left :30%;
 	width : 30%;
 	min-width : 300px;
 	position : relative;
@@ -37,40 +33,30 @@ header
 	word-wrap : break-word;
 }
 
-#titre_de_la_page
+/*.id
+{
+	position:float;
+	bottom : 30%;
+
+}
+
+.Inscription
+{
+
+	position:float;
+	bottom : 30%;
+
+}*/
+
+div
 {
 	position:relative;
-	top:5%;
-	bottom:80%;
-	margin-left :auto;
-	margin-right: auto;
-	width: 20%;
-	height: 5%;
-}
+	top:50% -12 px;
+	left: 35%;
+	right: 35%
+	display: inline;
 
 
-
-#thewall
-{
-	position: relative;
-	top: 15%;
-	bottom: 10%;
-	margin-left:auto ;
-	margin-right: auto;
-	overflow: scroll;
-	background-color: white;
-	border: 2px solid black;
-	border-radius : 5px;
-	width: 40%;
-	height: 65%;
-}
-
-nav
-{
-	position: fixed;
-	top: 10%;
-	left:0%;
-	width: 25%;
 }
 
 footer
@@ -88,6 +74,15 @@ footer
 	-o-hyphens: auto;
 	hyphens: auto;
 	word-wrap : break-word;
-	top:85	%;
+	top:50%;
 	
 }
+
+button
+{
+	width: 150px;
+	height:60px;
+
+
+}
+

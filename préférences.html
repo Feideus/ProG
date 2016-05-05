@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="LANG" content="fr"/>
+		<link rel="stylesheet" href="prefence.css" />
+		<meta name="description" content=" Gere les preference en js"/>
+		<script type="text/javascript" src = "jquery-1.12.3.js"></script>
+		<script type="text/javascript" src = "cook/jquery.cookie.js"></script>
+		<title>Preferences</title>
+		<script type="text/javascript">
+			function changeColor(color)
+			{
+				var Selcolor = document.getElementById("Selcolor");
+				var color = Selcolor.value;
+				document.body.style.backgroundColor = color;
+				$.cookie("color",Selcolor.value, { expires : 30});
+			}
+
+			function changeColor2(color)
+			{
+				var Selcolor1 = document.getElementById("Selcolor1");
+				var color1 = Selcolor1.value;
+				document.body.style.color = color1;
+				$.cookie("color1",Selcolor1.value, { expires : 30});
+			}
+
+			function defaut()
+			{
+
+				$.removeCookie("color");
+			}
+
+			function  defaut2()
+			{
+				$.removeCookie("color1");
+			}
+
+		</script>
+
+	</head>
+	<body>
+		<a href="connexion.html"> <header> <h1>TOUITTEUR</h1></header></a>
+		<div id="titre_de_la_page">
+				<h2>Conversation avec :</h2>
+		</div>
+		<nav>
+				<fieldset>
+					<legend>Navigation</legend>
+					<ul>				    
+						<li>
+							 <a href="parametre.html"><p>Paramètres</p></a>
+				 		</li>
+				 		<li>
+							<a href="listeabonné.html"><p> Liste des abonnés </p></a>
+						</li>
+						<li>
+							<a href="chat.html"><p> Messages Privés</p></a>				
+					</ul>
+				</fieldset>
+		</nav>
+		<div id="sendpost">
+			<!-- <form method="post" action="preference2.php"> -->
+			<form>
+				<fieldset>
+				<label>Choissez votre couleur de fond </label><br/>
+       				<select id = "Selcolor">
+           			<option value="#008000">Vert</option>
+           			<option value="#0000FF">Bleu</option>
+          			<option value="#000000">Noir</option>
+          			<option value="#FF0000">Rouge</option>
+       				</select> 
+       				<input id="Lebouton" type="button" value = "Envoyer" onclick = "changeColor()" />
+       				<input id="Lebouton2" type="button" value = "default (need refresh to see"" onclick = "defaut()" />
+       			</fieldset>
+			</form>
+
+			<form >
+				<fieldset>
+				<label>Choissez votre couleur de police </label><br/>
+       				<select id="Selcolor1">
+           			<option value="#008000">Vert</option>
+           			<option value="#0000FF">Bleu</option>
+          			<option value="#000000">Noir</option>
+          			<option value="#FF0000">Rouge</option>
+       				</select>
+       				<input id="Lebouton1" type="button" value = "Envoyer"  onclick = "changeColor2()" />
+       				<input id="Lebouton3" type="button" value = "default (need refresh to see" onclick = "defaut2()" />
+       			</fieldset>
+			</form>
+
+		</div>
+		<footer>
+			<p>@Touitteur Erwan & Gaëtan Tout droits réservés ©</p>
+		</footer>
+	</body>
+</html>
