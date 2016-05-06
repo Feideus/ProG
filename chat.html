@@ -2,6 +2,10 @@
 <html>
 
 	<head> 
+	        <script type="text/javascript" src = "jquery-1.12.3.js"></script>
+		<script type="text/javascript" src = "cook/jquery.cookie.js"></script>
+	        <script type="text/javascript" src = "makecookie.js"></script>
+		<script type="text/javascript" src = "ScriptEssai.js"></script>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<meta name="LANG" content="fr"/>
 		<link rel="stylesheet" href="chat.css" />
@@ -30,9 +34,13 @@
 		<div id="choisirpersonne">
 			<form method="post">
 				<legend>A qui voulez vous envoyer un message ?</legend>
-				<input type="text" name="name" />
-				<a href="mp.html"> <input id="Lebouton" type="button" value = "Valider"/> </a>
+				<input type="text" id="LeNom" />
+				<input id="Lebouton" type="button" value = "Valider" onclick ="getNom()"/>
 			</form>
+		</div>
+		<div  id="zoneMessage">
+		  <label> CONVERSATION VIDE </label>
+		  
 		</div>
 		<footer>
 			<p>@Touitteur Erwan & Gaëtan Tout droits réservés ©</p>

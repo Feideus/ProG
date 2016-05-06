@@ -1,6 +1,10 @@
 <!doctype html> 
 <html> 
 	<head>
+	        <script type="text/javascript" src = "jquery-1.12.3.js"></script>
+		<script type="text/javascript" src = "cook/jquery.cookie.js"></script>
+	        <script type="text/javascript" src = "makecookie.js"></script>
+		  
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 		<meta name="LANG" content="fr"/>
 		<link rel="stylesheet" href="connexion.css" />
@@ -34,7 +38,8 @@
 					</ol>
 				</fieldset>
 				<fieldset> 
-						<input type="submit" name="Valider" value="Connexion"/>
+						<input type="submit" name="Valider" value="Connexion" onclick= "Cookpseudo()"/>
+						
 				</fieldset>
 			</form>
 		</article>

@@ -1,0 +1,39 @@
+<?php
+
+$LeNom = $_REQUEST["LeNomDest"];
+$IDAut = $_REQUEST["IDAut"];
+
+if ($LeNom !== "") 
+{
+    $LeNom = strtolower($LeNom);
+}
+
+try
+{
+    $bdd=new PDO('mysql:host=localhost;dbname=Touiteur','erwan','lebossdesboss32');
+}
+
+catch (Exception $e)
+{
+        die('Error 1.2.3.4.Z connection a la base');
+}
+echo "OUCOUC2";
+$req = $bdd->prepare('SELECT id FROM Touitos WHERE pseudonyme = :pseudonyme');
+$req3 = $bdd->prepare('SELECT id FROM Touitos WHERE pseudonyme = :pseudonyme');
+$req2 = $bdd->prepare('SELECT texte FROM Touites,TouitesPrives WHERE (Touites.IDMsg = TouitesPrives.IDMsg AND (TouitesPrives.IDauteur = :idAuteur INNERJOIN TouitesPrives.IDreceveur = :idreceveur )) SORT BY Touites.date');
+
+$req3->execute(array('pseudonyme' => $IDAut));
+$req->execute(array('pseudonyme' => $LeNom));
+$IDDest = $req->fetch();
+$IDAut = $req3->fetch();
+var_dump($IDDest['id']);
+var_dump($IDDest['id']);
+$req2->execute(array('idAuteur' => $IDDest['ID'], 'idreceveur' => $IDAut['ID']));
+
+echo "OUCOUC3";
+while($Touites = $req2->fetch())        
+{
+	echo "OUCOUC4";	
+	echo"".$Touites['texte']."";
+}
+?>
