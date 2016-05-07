@@ -12,7 +12,6 @@
 
 			function testchamps()
             { 
-                echo"COUCOU";
 				if(!empty($this->pseudo))
                 {// D'abord,je teste si le champs login est non vide.  
 					if(!empty($this->passe) AND !empty($this->passe2))
@@ -33,7 +32,6 @@
             
             function ajoutTouitos($id,$pseudo,$email,$motPasse)
 		{
-                echo"COUCOU3";
                 $bdd=new PDO('mysql:host=localhost;dbname=Touiteur','erwan','lebossdesboss32');		
                 // Je me connecte à la base de données .		
                 // Je vais crypter le mot de passe.	

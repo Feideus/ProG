@@ -20,12 +20,12 @@ catch (Exception $e)
 }
 $req = $bdd->prepare('SELECT id FROM Touitos WHERE pseudonyme = :pseudonyme');
 $req3 = $bdd->prepare('SELECT id FROM Touitos WHERE pseudonyme = :pseudonyme');
-$req2 = $bdd->prepare('SELECT texte,IDAuteur FROM Touites,TouitesPrives WHERE
+$req2 = $bdd->prepare('SELECT date_t,texte,IDAuteur FROM Touites,TouitesPrives WHERE
 (Touites.IDMsg = TouitesPrives.IDMsg
 AND
 ((TouitesPrives.IDAuteur = :idAuteur AND TouitesPrives.IDReceveur = :idreceveur)
 OR
-(TouitesPrives.IDReceveur = :idAuteur AND TouitesPrives.IDAuteur = :idreceveur)))');
+(TouitesPrives.IDReceveur = :idAuteur AND TouitesPrives.IDAuteur = :idreceveur))) ORDER BY date_t');
 
 $req3->execute(array('pseudonyme' => $NameHost));
 $req->execute(array('pseudonyme' => $LeNom));
@@ -39,6 +39,7 @@ $req2->execute(array('idAuteur' => $IDDest['id'], 'idreceveur' => $IDAut2['id'])
 
 while($Touites = $req2->fetch())        
 {
+    
     $req4 = $bdd->prepare('SELECT pseudonyme FROM Touitos WHERE ID = :idAuteur');
     $req4->execute(array('idAuteur' => $Touites['IDAuteur']));
     $tmp = $req4->fetch();

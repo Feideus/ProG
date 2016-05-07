@@ -29,10 +29,10 @@
 				</fieldset>
 		</nav>
 		<div id="sendpost">
-			<form action ="posttouitte.php" method = "POST">
+			<form action="connexion.php" method="post">
 				<legend>Publier un Message</legend>
 				<TEXTAREA name="Message" rows=4 cols=40></TEXTAREA> 
-				<input id="Lebouton" type="submit" value = "Envoyer"/>
+				<input id="Lebouton" type="button" value = "Envoyer"/>
 			</form>
 		</div>
 		<div id="thewall">

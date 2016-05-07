@@ -1,0 +1,54 @@
+<?php
+	class Touites
+	{
+		var $idpseudo;
+		var $message;
+		var $dates;
+		var $id;
+
+		function attribid()
+		{
+			$bdd=new PDO('mysql:host=localhost;dbname=Touiteur','erwan','lebossdesboss32');
+			this->$id = $bdd->query('SELECT MAX(IDMsg) FROM TOUITES');
+			this->$id = id + 1;
+		}
+
+		function dates()
+		{
+			this->$dates = new DateTime();
+		}
+
+		function messageandauthor()
+		{
+			var $autor;
+			this->$message = $_POST["message"];
+			$autor = $_COOKIE['pseudo'];
+			$bdd=new PDO('mysql:host=localhost;dbname=Touiteur','erwan','lebossdesboss32');
+			this->$idpseudo = $bdd->query('SELECT ID FROM TOUITOS WHERE TOUITOS.pseudonyme = $autor');
+
+		}
+
+		function Touites_ajout($message,$id ,$date)
+		{
+			$bdd=new PDO('mysql:host=localhost;dbname=Touiteur','erwan','lebossdesboss32');	
+			$req = $bdd->prepare('INSERT INTO Touites VALUES(:id,:dates,:message)');
+			$req->execute(array('id' => $id, 'dates' => $dates , 'message' => $message));
+		}
+
+		function Touites_Public_ajout($id,$idpseudo)
+		{
+			$bdd=new PDO('mysql:host=localhost;dbname=Touiteur','erwan','lebossdesboss32');	
+			$req = $bdd->prepare('INSERT INTO TouitesPublics VALUES(:IDMsg,:IDAuteur)');
+			$req->execute(array('IDMsg' => $id, 'IDAuteur' => $idpseudo));
+		}
+
+		attribid();
+		dates();
+		messageandauthor();
+		Touites_ajout(this->$message,this->$id,this->dates);
+		Touites_Public_ajout(this->$id,this->idpseudo);
+	}
+?>
+
+
+

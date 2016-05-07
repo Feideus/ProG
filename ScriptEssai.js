@@ -24,7 +24,6 @@ function getNom()
      var xhr = new XMLHttpRequest();
      var tmp =  document.getElementById("LeNom");
      var res =  tmp.value;
-     
     
      xhr.onreadystatechange = function() 
       {
@@ -36,10 +35,10 @@ function getNom()
       xhr.open("POST", "AfficherMessages.php", true);
       xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
       xhr.send("LeNomDest="+res+"&NameHost="+NameHost);
-     
+      
 }
 
-var timer=setInterval("GetNom()", 10000);
+var timer=setInterval("getNom()", 5000);
 
 
 
