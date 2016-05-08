@@ -1,4 +1,4 @@
--<!doctype html>
+﻿-<!doctype html>
 <html>
 
 	<head> 
@@ -18,13 +18,17 @@
 					<legend>Navigation</legend>
 					<ul>				    
 						<li>
-							 <a href="parametre.html"><p>Paramètres</p></a>
+							 <a href="Page_info.html"><p>Page paramètres</p></a>
 				 		</li>
 				 		<li>
-							<a href="listeabonné.html"><p> Liste des abonnés </p></a>
+							<a href="listeabonné.php"><p> Liste des abonnés </p></a>
 						</li>
 						<li>
-							<a href="chat.html"><p> Messages Privés</p></a>				
+							<a href="chat.html"><p> Messages Privés</p></a>	</li>	
+				<li>
+							<a href="wall.php"><p> Mon profil </p></a>	</li>
+	<li>
+							<a href="préférences.html"><p> Préférences </p></a>				</li>
 					</ul>
 				</fieldset>
 		</nav>
@@ -37,7 +41,9 @@
 		</div>
 		<div id="thewall">
 
-
+		  <?php
+		     require("LesTouites.php");
+		  ?>
 
 		</div>
 		<footer>

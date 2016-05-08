@@ -13,6 +13,28 @@ body
 	    width: 100%;
 }
 
+#zoneEnvois
+{
+    overflow: auto;
+    background-color: white;
+    border: 2px solid black;
+    border-radius : 5px;
+    position: fixed;
+    top: 32.5%;
+    height:20%;
+    left:73%;
+    width: 22%;
+}
+
+#BoutonEnvois
+{
+
+    overflow: auto;
+    border-radius : 5px;
+    position: fixed;
+    top: 57%;
+    left:90%;
+}
 
 header
 {
@@ -52,9 +74,10 @@ header
 {
     	position: relative;
 	top: 55%+12px;
+	right: 5%;
 	margin-left:auto ;
 	margin-right: auto;
-	overflow: scroll;
+	overflow: auto;
 	background-color: white;
 	border: 2px solid black;
 	border-radius : 5px;
@@ -67,7 +90,7 @@ nav
 	position: fixed;
 	top: 10%;
 	left:0%;
-	width: 25%;
+	width: 18%;
 }
 
 footer

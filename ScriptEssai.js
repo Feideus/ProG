@@ -35,10 +35,30 @@ function getNom()
       xhr.open("POST", "AfficherMessages.php", true);
       xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
       xhr.send("LeNomDest="+res+"&NameHost="+NameHost);
+     
       
 }
 
-var timer=setInterval("getNom()", 5000);
+ var timer=setInterval("getNom()", 500);
+
+function EnvoisMP()
+{
+     var xhr = new XMLHttpRequest();
+     var tmp =  document.getElementById("zoneEnvois");
+     var res =  tmp.value;
+     xhr.onreadystatechange = function() 
+      {
+	 if (xhr.readyState == 4 && xhr.status == 200) 
+	 {  
+	       document.getElementById("zoneEnvois").innerHTML = "";
+         }     
+      };
+      xhr.open("POST", "postmp.php", true);
+      xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+      xhr.send("LeMessage="+res);
+     
+}
+
 
 
 
@@ -46,20 +66,3 @@ var timer=setInterval("getNom()", 5000);
 
 
     
-
-
-function showHint(str) {
-    if (str.length == 0) {
-        document.getElementById("txtHint").innerHTML = "";
-        return;
-    } else {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = function() {
-            if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-                document.getElementById("txtHint").innerHTML = xmlhttp.responseText;
-            }
-        };
-        xmlhttp.open("GET", "gethint.php?q=" + str, true);
-        xmlhttp.send();
-    }
-}

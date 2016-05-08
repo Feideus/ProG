@@ -18,7 +18,7 @@
 					<legend>Navigation</legend>
 					<ul>				    
 						<li>
-							 <a href="parametre.html"><p>Paramètres</p></a>
+							 <a href="Page_info.html"><p>Paramètres</p></a>
 				 		</li>
 				 		<li>
 							<a href="listeabonné.html"><p> Liste des abonnés </p></a>
@@ -38,37 +38,8 @@
 		<div id="thewall">
 			<strong><legend class="histo">Historique conversation</legend></strong>
 			<?php
-			try
-			{
-			// On se connecte à MySQL
-				$bdd = new PDO('mysql:host=localhost;dbname=BDE11200183;charset=utf8', 'root', '');
-			}
-			catch(Exception $e)
-			{
-				// En cas d'erreur, on affiche un message et on arrête tout
-       			 die('Erreur : '.$e->getMessage());
-			}
-
-			// Si tout va bien, on peut continuer
-
-			// On récupère tout le contenu de la table jeux_video
-			$reponse = $bdd->query('SELECT * FROM mp WHERE expediteur = $_SESSION['pseudo'] OR expediteur = $_SESSION['pseudo'] = $_POST['pseudo'] SORT BY date ');
-
-			// On affiche chaque entrée une à une
-			while ($donnees = $reponse->fetch())
-			{
-		?>
-    		<p>
-    			 <?php echo $donnees['expéditeur']; ?> : <?php echo $donnes['message']; ?> </br>
-   			</p>
-		<?php
-			}
-
-			$reponse->closeCursor(); // Termine le traitement de la requête
-
-		?>
-
-
+			   require("messagePrive.php");
+			?>
 
 
 		</div>

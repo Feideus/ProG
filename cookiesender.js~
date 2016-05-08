@@ -1,0 +1,9 @@
+function Cookpseudo2(pseudo)
+{
+	var pseudonyme = document.getElementById("pseudonyme");
+	var name = pseudonyme.value;
+	document.body.style.backgroundColor = name;
+	$.cookie("namereceveur",pseudonyme.value);
+}
+
+/*A utiliser quand on clique sur valider quand on  dit le nom de a qui on veut parler*/

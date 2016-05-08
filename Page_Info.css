@@ -62,7 +62,7 @@ header
 
 #DeuxiemeDiv
 {
-    position:relative;
+    position:fixed;
     border: 2px solid purple;
     left: 100.5%;
     width: 20%;

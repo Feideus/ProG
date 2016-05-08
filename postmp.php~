@@ -1,0 +1,135 @@
+<?php
+	class Touites
+	{
+		var $idauteur;
+		var $IDReceveur;
+		var $message;
+		var $dates;
+		var $id; //du message
+
+
+		function attribid()
+		{
+			try
+			{
+			// On se connecte à MySQL
+				$bdd=new PDO('mysql:host=localhost;dbname=Touiteur','erwan','lebossdesboss32');			
+			}
+			catch(Exception $e)
+			{
+				// En cas d'erreur, on affiche un message et on arrête tout
+       			 die('Erreur : '.$e->getMessage());
+			}
+			
+			this->$id = $bdd->query('SELECT MAX(IDMsg) FROM TOUITES');
+			this->$id = id + 1;
+		}
+
+		function dates()
+		{
+			this->$dates = new DateTime();
+		}
+
+		function messageandauthor()
+		{
+			var $autor;
+			var $receveur;
+			this->$message = $_POST["message"];
+			$autor = $_COOKIE['name'];
+			$receveur = $_COOKIE['namereceveur'];
+			try
+			{
+			// On se connecte à MySQL
+				$bdd=new PDO('mysql:host=localhost;dbname=Touiteur','erwan','lebossdesboss32');			
+			}
+			catch(Exception $e)
+			{
+				// En cas d'erreur, on affiche un message et on arrête tout
+       			 die('Erreur : '.$e->getMessage());
+			}
+			this->$idauteur = $bdd->query('SELECT ID FROM TOUITOS WHERE TOUITOS.pseudonyme = $autor');
+			this->$IDReceveur = $bdd->query('SELECT ID FROM TOUITOS WHERE TOUITOS.pseudonyme = $receveur');
+		}
+
+		function Touites_ajout($message,$id ,$date)
+		{
+			try
+			{
+			// On se connecte à MySQL
+				$bdd=new PDO('mysql:host=localhost;dbname=Touiteur','erwan','lebossdesboss32');			
+			}
+			catch(Exception $e)
+			{
+				// En cas d'erreur, on affiche un message et on arrête tout
+       			 die('Erreur : '.$e->getMessage());
+			}
+			$req = $bdd->prepare('INSERT INTO Touites VALUES(:id,:dates,:message)');
+			$req->execute(array('id' => $id, 'dates' => $dates , 'message' => $message));
+		}
+
+		function Touites_Prive_ajout($id,$idauteur, $IDReceveur)
+		{
+			try
+			{
+			// On se connecte à MySQL
+				$bdd=new PDO('mysql:host=localhost;dbname=Touiteur','erwan','lebossdesboss32');			
+			}
+			catch(Exception $e)
+			{
+				// En cas d'erreur, on affiche un message et on arrête tout
+       			 die('Erreur : '.$e->getMessage());
+			}	
+			$req = $bdd->prepare('INSERT INTO TouitesPublics VALUES(:IDMsg,:IDAuteur, :IDReceveur)');
+			$req->execute(array('IDMsg' => $id, 'IDAuteur' => $idauteur , 'IDReceveur' => 'IDReceveur'));
+		}
+
+		attribid();
+		dates();
+		messageandauthor();
+		Touites_ajout(this->$message,this->$id,this->dates);
+		Touites_Prive_ajout(this->$id,this->idauteur,this->IDReceveur°;
+	}
+?>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--/*create table Touites(
+IDMsg int not null,
+date_t date not null,
+texte varchar(140) not null,
+primary key (IDMsg)
+)ENGINE=INNODB;
+
+create table TouitesPrives(
+IDMsg int not null,
+IDAuteur int not null,
+IDReceveur int not null,
+IDMsgSource int,
+check(IDMsgSource != IDMsg),
+primary key (IDMsg),
+foreign key (IDMsg) references Touites (IDMsg),
+foreign key (IDAuteur) references Touitos (ID)
+	on update cascade
+	on delete cascade,
+foreign key (IDReceveur) references Touitos (ID)
+	on update cascade
+	on delete cascade,
+foreign key (IDMsgSource) references Touites (IDMsg)
+	on update cascade
+	on delete cascade
+)ENGINE=INNODB;-->

@@ -59,8 +59,6 @@
 							<a href="chat.html"><p> Messages Privés</p></a>			</li>	
 				<li>
 							<a href="wall.php"><p> Mon profil </p></a>				</li>
-					<li>
-							<a href="préférences.html"><p> Préférences </p></a>				</li>
 					</ul>
 				</fieldset>
 		</nav>

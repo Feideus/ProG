@@ -40,10 +40,10 @@
 
             $bdd=new PDO('mysql:host=localhost;dbname=Touiteur','erwan','lebossdesboss32');
 			$this->message = $_POST["Message"];
-			//$autor = $_COOKIE['pseudo'];
+			$autor = $_COOKIE['name'];
  	
             $req = $bdd->prepare('SELECT ID FROM Touitos WHERE pseudonyme = :autor');
-            $req->execute(array('autor' => "Feideus"));
+            $req->execute(array('autor' => $autor));
             $Donnee = $req->fetch();
             $this->idpseudo = $Donnee["ID"];
 
@@ -73,7 +73,7 @@
         $Touite->Touites_ajout($Touite->message, $Touite->id, $Touite->dates);
         $Touite->attribid(2);
 		$Touite->Touites_Public_ajout($Touite->id,$Touite->idpseudo);
-require("wall.html");
+require("wall.php");
 
 	
 ?>
