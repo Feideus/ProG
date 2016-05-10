@@ -32,11 +32,21 @@
 					</ul>
 				</fieldset>
 		</nav>
+		<form method="POST" action="wallother.php">
+		  <textarea id="PseudoAVisiter" name="PseudoAVisiter">Quel profil voulez vous consulter ?</textarea>
+		  <button type ="submit" id="ButtonProfil"> Visiter </button>
+		</form>
 		<div id="sendpost">
 			<form action ="posttouitte.php" method = "POST">
 				<legend>Publier un Message</legend>
 				<TEXTAREA name="Message" rows=4 cols=40></TEXTAREA> 
 				<input id="Lebouton" type="submit" value = "Envoyer"/>
+			</form>
+		</div>
+		<div id="Deco">
+			<form action ="deconnexion.php" method = "GET">
+				
+				<input id="Lebouton" type="submit" value = "Se Deconnecter"/>
 			</form>
 		</div>
 		<div id="thewall">

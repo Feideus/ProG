@@ -1,0 +1,37 @@
+<?php
+
+
+$name = $_POST['name'];
+
+
+try
+{
+    $bdd=new PDO('mysql:host=localhost;dbname=Touiteur','erwan','lebossdesboss32');
+}
+
+catch (Exception $e)
+{
+        die('Error 1.2.3.4.Z connection a la base');
+}
+
+
+$req10 = $bdd->prepare('SELECT 	IDReceveur FROM Touitos,Suivre WHERE (Touitos.ID = Suivre.IDDemandeur AND (Suivre.IDDemandeur = :idName))'); 
+
+$req = $bdd->prepare('SELECT pseudonyme FROM Touitos WHERE Touitos.ID = :IDName');
+
+
+
+
+
+$req10->execute(array('idName' => $name));
+
+while($Donnee = $req10->fetch())        
+{
+	
+	$req->execute(array('IDName' => $Donnees));
+	$IDName = $req->fetch();
+            echo ".$IDName['pseudonyme'].""<br/>";    
+}
+ 
+?>
+

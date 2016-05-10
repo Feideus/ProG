@@ -1,0 +1,32 @@
+<?php
+    session_start(); 
+    $name = $_COOKIE['name'];
+    $_SESSION['pseudo'] = $name;
+    $email = $_POST['email'];
+    $pseudo = $_POST['pseudo'];
+    $mdp = $_POST['password']; 
+
+
+	try
+	{
+    	$bdd=new PDO('mysql:host=localhost;dbname=Touiteur','erwan','lebossdesboss32');
+	}
+
+	catch (Exception $e)
+	{
+        	die('Error 1.2.3.4.Z connection a la base');
+	}
+
+	$req = $bdd->prepare('SELECT ID FROM Touitos WHERE pseudonyme = :pseudonyme');
+$req1 = $bdd->prepare('UPDATE Touitos SET pseudonyme = :pseudonyme, email = :email ,motPasse = :motPasse  WHERE ID = :id' );
+
+
+$req->execute(array('pseudonyme' => $name));
+$Donnee = $req->fetch();
+$req1->bindParam(':pseudonyme', $pseudo);
+$req1->bindParam(':email', $email);
+$req1->bindParam(':motPasse', $mdp);
+$req1->bindParam(':id' , $Donnee['ID']);
+$req1->execute();
+header("location: Page_info2.php");
+?>

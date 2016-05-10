@@ -37,7 +37,13 @@
 		<?php
 		    require("ListeAbonné.php");
 		?>
+		
+		<div id="Suivis">
+		<?php
+		    require("ListeAbonnement.php");
+		?>
 		</div>
+
 		<footer>
 			<p>@Touitteur Erwan & Gaëtan Tout droits réservés ©</p>
 		</footer>

@@ -1,21 +1,34 @@
 <?php
-echo "toto";
+
+$id = $_POST['pseudonyme'];
+$mdp = $_POST['mdp'];
+
 try
 {
-    $bdd = new PDO('mysql:host=localhost;dbname=TOUITTEUR;charset=utf8', 'Feideus', 'lebossdesboss32');
+    $bdd=new PDO('mysql:host=localhost;dbname=Touiteur','erwan','lebossdesboss32');
 }
 
 catch (Exception $e)
 {
-        die('Error 1.2.3.4.Z connection a la base ');
+        die('Error 1.2.3.4.Z connection a la base');
 }
 
-$req = $bdd->prepare('SELECT * FROM Touitos');
-$req->execute();
+$req = $bdd->prepare('SELECT id FROM Touitos WHERE pseudonyme = :id AND motPasse = :mdp');
 
 
-while($donnee = $req->fetch())
+$req->execute(array(
+    'id' => $id,
+    'mdp' => $mdp));
+
+
+if($req->fetch() === false)
 {
-        echo " REPONSE REQUETE SQL : ".$donnee['pseudonyme'];
+    require("connexion.php");
 }
+
+else
+{
+    require("wall.php");
+}    
 ?>
+

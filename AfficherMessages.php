@@ -1,10 +1,10 @@
 <?php
 
-$LeNom = $_POST["LeNomDest"];
-$NameHost = $_POST["NameHost"];
+$LeNom = htmlentities($_POST["LeNomDest"]);
+$NameHost = htmlentities($_POST["NameHost"]);
 
 
-if ($LeNom !== "") 
+if (!empty($LeNom)) 
 {
     $LeNom = strtolower($LeNom);
 }

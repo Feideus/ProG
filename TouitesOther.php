@@ -1,13 +1,8 @@
 <?php
 
 
-$NameHost = $_COOKIE['name'];
+$NameVisitor = $_POST['PseudoAVisiter'];
 
-
-if ($NameHost !== "") 
-{
-    $LeNom = strtolower($LeNom);
-}
 
 try
 {
@@ -22,14 +17,16 @@ catch (Exception $e)
 $req = $bdd->prepare('SELECT ID FROM Touitos WHERE pseudonyme = :pseudonyme');
 $req10 = $bdd->prepare('SELECT texte,date_t FROM Touites,TouitesPublics WHERE (Touites.IDMsg = TouitesPublics.IDMsg AND (TouitesPublics.IDAuteur = :idNameHost)) ORDER BY date_t'); 
 
-$req->execute(array('pseudonyme' => $NameHost));
+$req->execute(array('pseudonyme' => $NameVisitor));
 $IDNameHost = $req->fetch();
+
+
 
 $req10->execute(array('idNameHost' => $IDNameHost['ID']));
 
 while($Donnee = $req10->fetch())        
 {
-            echo "Le :".$Donnee['date_t']." ".$_COOKIE['name']." a touité  ".$Donnee['texte']."<br/>";    
+            echo "Le :".$Donnee['date_t']." ".$NameVisitor." a touité  ".$Donnee['texte']."<br/>";    
 }
  
 ?>

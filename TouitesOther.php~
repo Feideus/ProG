@@ -1,12 +1,12 @@
 <?php
 
 
-$NameHost = $_COOKIE['name'];
 
+$NameVisitor = $_POST['PseudoAVisiter'];
 
-if ($NameHost !== "") 
+if ($NameVisitor !== "") 
 {
-    $LeNom = strtolower($LeNom);
+    $NameVisitor = strtolower($NameVisitor);
 }
 
 try

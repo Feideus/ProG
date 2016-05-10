@@ -10,28 +10,28 @@
  
 
 
-			function testchamps()
+            function testchamps()
             { 
-				if(!empty($this->pseudo))
+		if(!empty($this->pseudo))
                 {// D'abord,je teste si le champs login est non vide.  
-					if(!empty($this->passe) AND !empty($this->passe2))
+		    if(!empty($this->passe) AND !empty($this->passe2))
                     {// Ensuite, je teste si le champs mdp est non vide.
-						if($this->passe === $this->passe2)
+			if($this->passe === $this->passe2)
                         {	
-							if (filter_var($this->email, FILTER_VALIDATE_EMAIL)) 
+			    if (filter_var($this->email, FILTER_VALIDATE_EMAIL)) 
                             {
-									return true;
-							}
-						}	
-					}
-                }
-				return false;
+				return true;
+			    }
+		        }	
+		     }
+                 }
+		return false;
             }
 
  
             
             function ajoutTouitos($id,$pseudo,$email,$motPasse)
-		{
+	    {
                 $bdd=new PDO('mysql:host=localhost;dbname=Touiteur','erwan','lebossdesboss32');		
                 // Je me connecte à la base de données .		
                 // Je vais crypter le mot de passe.	

@@ -36,28 +36,11 @@ header
 	hyphens: auto;
 	word-wrap : break-word;
 }
-#PseudoAVisiter
-{
-	position: fixed;
-	top: 45%;
-	left:6%;
-	
-}
-
-
-#ButtonProfil
-{
-    	position: fixed;
-	top: 47.5%;
-	left:20%;
-	width:5%;
-	height:4%;
-}
 
 #titre_de_la_page
 {
 	position:relative;
-	top:10%;
+	top:5%;
 	bottom:80%;
 	margin-left :auto;
 	margin-right: auto;
@@ -65,20 +48,13 @@ header
 	height: 5%;
 }
 
-#sendpost
-{
-	top: 10%;
-	position:relative;
-	margin-left :75%;
-	width : 25%;
-	height: 20%;
-}
 
-#thewall
+
+#actuabo
 {
 	position: relative;
-	top: 35%+12px;
-	bottom: 10%;
+	top: 10%;
+	/*bottom: 10%;*/
 	margin-left:auto ;
 	margin-right: auto;
 	overflow: scroll;
@@ -87,6 +63,24 @@ header
 	border-radius : 5px;
 	width: 40%;
 	height: 65%;
+}
+
+#Recherchepersonne
+{
+	position: relative;
+	top: 15%;
+	margin-left:75%;
+	padding-left:1%;
+	padding-top: 1%;
+	margin-right: 5%;
+	background-color: white;
+	border: 2px solid black;
+	border-radius : 5px;
+	width: 20%;
+	height: 10%;
+	background-color: green;
+	overflow: hidden;
+
 }
 
 nav
@@ -112,7 +106,6 @@ footer
 	-o-hyphens: auto;
 	hyphens: auto;
 	word-wrap : break-word;
-	top:90% + 25px;
+	top:85%;
 	
 }
-

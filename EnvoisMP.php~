@@ -69,12 +69,17 @@
 //$Touite->dates();
         $Touite->dates = 20160503;
 		$Touite->messageandauthor();     
-
-        $Touite->Touites_ajout($Touite->message, $Touite->id, $Touite->dates);
-        $Touite->attribid(2);
+	if(!empty(Touite->idpseudo) AND !empty(Touite->message)) 
+        {
+		$Touite->Touites_ajout($Touite->message, $Touite->id, $Touite->dates);
+       		$Touite->attribid(2);
 		$Touite->Touites_Public_ajout($Touite->id,$Touite->idpseudo);
-require("wall.php");
-
+		require("wall.php");
+	}
+	else
+	{
+		die("Fatal Error");
+	}
 	
 ?>
 

@@ -1,3 +1,8 @@
+<?php	
+	session_start();
+	setcookie('name',$_SESSION['pseudo'],10000000);
+	var_dump($_SESSION['pseudo']);
+?>
 <!doctype html>
 <html>
   <head>
@@ -65,3 +70,4 @@
   </body>
 
 </html>
+

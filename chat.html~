@@ -30,15 +30,18 @@
 						<li>
 							<a href="chat.html"><p> Messages Privés</p></a>				
 						</li>
-<li>						<a href="wall.php"><p> Mon profil </p></a></li>						
+<li>						<a href="wall.php"><p> Mon profil </p></a></li>
+	<li>
+							<a href="préférences.html"><p> Préférences </p></a>				</li>						
 					</ul>
 				</fieldset>
 		</nav>
 		<div id="choisirpersonne">
 			<form method="post">
 				<legend>A qui voulez vous envoyer un message ?</legend>
+				<label>Noubliez pas de cliquer sur le Bouton pour discuter</label>
 				<input type="text" id="LeNom" />
-				<input id="Lebouton" type="button" value = "Valider" onclick ="getNom()" />
+				<input id="Lebouton" type="button" value = "Valider" onclick ="Cookpseudo2()" />
 			</form>
 		</div>
 		<div  id="zoneMessage">
@@ -46,10 +49,8 @@
 		  
 		</div>
 		<form method="POST" action ="postmp.php">
-		  <textarea  id="zoneEnvois" name="zoneEnvoi">
-		  
-		  </textarea>
-		  <button type ="submit" id="BoutonEnvois" onclick="Cookpseudo2()" >Envoyer</button>
+		  <textarea  id="zoneEnvois" name="zoneEnvoi">Ecrivez ici</textarea>
+		  <button type ="button" id="BoutonEnvois" onclick="EnvoisMP()" >Envoyer</button>
 		</form>
 		<footer>
 			<p>@Touitteur Erwan & Gaëtan Tout droits réservés ©</p>

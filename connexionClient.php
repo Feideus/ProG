@@ -1,5 +1,8 @@
 <?php
 
+$id = htmlentities($_POST['pseudonyme']);
+$mdp = htmlentities($_POST['mdp']);
+
 try
 {
     $bdd=new PDO('mysql:host=localhost;dbname=Touiteur','erwan','lebossdesboss32');
@@ -14,8 +17,8 @@ $req = $bdd->prepare('SELECT id FROM Touitos WHERE pseudonyme = :id AND motPasse
 
 
 $req->execute(array(
-    'id' => $_POST['pseudonyme'],
-    'mdp' => $_POST['mdp']));
+    'id' => $id,
+    'mdp' => $mdp));
 
 
 if($req->fetch() === false)
@@ -25,9 +28,7 @@ if($req->fetch() === false)
 
 else
 {
-    require("wall.html");
-    $resultat['pseudonyme'] = $_POST['pseudonyme'];
-    $_SESSION['pseudo'] = $resultat['pseudonyme'];
+    require("wall.php");
 }    
 ?>
 

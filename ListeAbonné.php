@@ -20,6 +20,7 @@ $req->execute(array('id' => $id));
 
 while ($Donnee = $req->fetch())
     {
+        echo"   -----VOS SUIVEURS-----   "."<br/>";
         $req2->execute(array('idReq' => $Donnee['IDDemandeur']));
         $tmp2 = $req2->fetch();
         echo"".$tmp2['pseudonyme']."<br/>";

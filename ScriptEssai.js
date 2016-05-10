@@ -59,9 +59,41 @@ function EnvoisMP()
      
 }
 
+function De_Abonnement()
+{
+     var NameHost = getCookie("name");
+     var xhr = new XMLHttpRequest();
+     var tmp =  document.getElementById("Lebouton");
+     var res =  tmp.value;
+     var tmp2 = document.getElementById("Lelabel");
+     var PseudoPage = tmp2.innerHTML;
+     xhr.onreadystatechange = function() 
+      {
+	 if (xhr.readyState == 4 && xhr.status == 200) 
+	 {  
+	       document.getElementById("Lebouton").innerHTML = "";
+         }     
+      };
+      xhr.open("POST", "De_Abonnement.php", true);
+      xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+      xhr.send("BoutonLabel="+res+"&Lelabel="+PseudoPage);
+      changeMessage(res);
+}
 
 
-
+function changeMessage(Abo)
+{
+    var Lebouton = document.getElementById('Lebouton');
+    var Abo = Lebouton.value;
+    if(Abo == "Suivre")
+    {
+	document.getElementById('Lebouton').value ="Ne plus suivre";
+    }
+    else
+    {
+	document.getElementById('Lebouton').value ="Suivre";
+    }
+}
 
 
 

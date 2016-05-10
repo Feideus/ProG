@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+
+	<head> 
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+		<meta name="LANG" content="fr"/>
+		<link rel="stylesheet" href="accueilperso.css" />
+		<meta name="description" content=" Page d'accueil"/>
+		<script type="text/javascript" src = "jquery-1.12.3.js"></script>
+		<script type="text/javascript" src = "cook/jquery.cookie.js"></script>
+		<script type="text/javascript" src = "cookiesearch.js"></script>
+		<title>Page d'accueil</title>
+	</head>
+	<body>
+		<a href="connexion.html"> <header> <h1>TOUITTEUR</h1></header></a>
+		<div id="titre_de_la_page">
+				<h2>Accueil</h2>
+		</div>
+		<div id="Recherchepersonne">
+			<form method="POST" action="perso.php">
+				<legend>Quel profil voulez-vous visiter ?</legend>
+				<input type="text" name="namesearch" />
+				<input id="BoutonSend" type="button" value = "Rechercher" onclick="CookPseudo3()"/>
+			</form>
+		</div>
+		<nav>
+				<fieldset>
+					<legend>Navigation</legend>
+					<ul>
+						<li>
+							<a href="accueilperso.html"><p> Accueil</p></a>				
+					
+						</li>				    
+						<li>
+							 <a href="parametre.html"><p>Paramètres</p></a>
+				 		</li>
+				 		<li>
+							<a href="listeabonné.html"><p> Liste des abonnés </p></a>
+						</li>
+						<li>
+							<a href="chat.html"><p> Messages Privés</p></a>				
+					
+						</li>
+						<li>
+							<a href="wall.php"><p>Mon Profil</p></a>				
+					
+						</li>
+						<li>
+							<a href="préférences.html"><p> Préférences</p></a>				
+					
+						</li>
+					</ul>	
+				</fieldset>
+		</nav>
+		<div id="actuabo">
+			<legend>Actualité de vos abonnements</legend>
+
+
+		</div>
+		<footer>
+			<p>@Touitteur Erwan & Gaëtan Tout droits réservés ©</p>
+		</footer>
+	</body>
+</html>
